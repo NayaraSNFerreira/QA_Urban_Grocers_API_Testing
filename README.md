@@ -2,7 +2,7 @@
 
 ## 📌 Sobre o projeto
 
-Projeto de testes manuais de API realizado durante a formação em QA, com foco na validação de novas funcionalidades da API do Urban.Grocers.
+Projeto de testes manuais de API realizado durante a formação em QA, com foco na validação de novas funcionalidades da API de uma aplicação de mercado/entrega de produtos (Urban.Grocers).
 
 O projeto envolveu a análise de requisitos, elaboração de checklist, execução de testes utilizando o Postman e registro das falhas identificadas no Jira.
 
