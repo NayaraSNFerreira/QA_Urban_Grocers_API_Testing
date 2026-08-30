@@ -24,7 +24,7 @@ Foram testadas as seguintes funcionalidades:
 - Validação dos parâmetros utilizados no cálculo da entrega;
 - Tratamento de valores nulos, vazios, negativos, inválidos e parâmetros ausentes.
 
-**Resultado:** 70 casos de teste executados nos dois endpoints analisados e 51 defeitos identificados e registrados no Jira.
+**Resultado:** 70 casos de teste executados nos dois endpoints analisados, com falhas identificadas e reportadas no Jira.
 
 
 ➡️ [Acessar documentação dos testes](./test-cases/api-testing.md)
