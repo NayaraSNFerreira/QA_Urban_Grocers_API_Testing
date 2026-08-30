@@ -1,60 +1,134 @@
-# 🧪 Testes de API – Urban.Grocers
+# 🔌 Testes de API — Urban.Grocers
 
-## 📌 Escopo
+## 📌 Objetivo
 
-Testes realizados na nova versão da API do Urban.Grocers, com foco nas seguintes funcionalidades:
+Realizar testes de API no backend da aplicação Urban.Grocers, aplicando técnicas de análise e design de testes para validar as novas funcionalidades relacionadas ao gerenciamento de produtos em kits e ao serviço de entrega Order and Go.
+
+O projeto foi desenvolvido durante minha formação em Quality Assurance (QA) na TripleTen.
+
+---
+
+## 🔎 Escopo
+
+Foram testados os endpoints responsáveis por:
 
 - Adição de produtos a kits;
-- Validação dos parâmetros do endpoint de kits;
-- Validação do limite de produtos em um kit;
+- Validação do limite de produtos em kits;
 - Verificação da disponibilidade do serviço de entrega Order and Go;
-- Validação do cálculo do custo de entrega;
-- Validação dos parâmetros utilizados no cálculo da entrega;
-- Tratamento de dados inválidos, ausentes, nulos, vazios e valores fora dos limites especificados.
+- Cálculo do custo de entrega;
+- Validação dos parâmetros das requisições.
 
-A autorização não fez parte do escopo dos testes, conforme definido na tarefa.
+Foram elaborados e executados **70 casos de teste**, contemplando cenários positivos e negativos, validações de parâmetros, valores-limite, dados inválidos e diferentes condições de entrada.
 
-## 🔧 Metodologia
+### Endpoints testados
 
-Os testes foram elaborados a partir da análise dos requisitos do back-end e da documentação da API.
+- `POST /api/v1/kits/:id/products`
+- `POST /order-and-go/v1/delivery`
 
-Foram aplicadas técnicas de validação de dados e testes de limites, considerando diferentes tipos e valores de entrada para verificar o comportamento da API em cenários positivos e negativos.
+A autorização da API não fez parte do escopo, conforme definido na tarefa.
 
-A execução dos testes foi realizada utilizando o **Postman**, com registro dos resultados e documentação das falhas encontradas no **Jira**.
+---
+
+## 🧪 Técnicas de teste
+
+- Testes positivos e negativos;
+- Particionamento em classes de equivalência;
+- Análise de valores-limite;
+- Validação de parâmetros obrigatórios;
+- Validação de dados nulos e vazios;
+- Validação de formatos e tipos de dados;
+- Validação de regras de negócio;
+- Validação de códigos de resposta HTTP;
+- Testes funcionais de API.
+
+---
+
+## 📋 Abordagem
+
+O trabalho envolveu a análise dos requisitos de backend e da documentação da API, identificação das condições de teste, elaboração dos casos de teste, execução das requisições no Postman e análise dos resultados obtidos.
+
+Foram utilizados diferentes valores de entrada para verificar o comportamento da API em situações válidas e inválidas, incluindo valores nulos, vazios, negativos, tipos de dados incompatíveis, parâmetros ausentes, identificadores inexistentes e diferentes valores de limite.
+
+Também foram verificadas regras específicas das funcionalidades, como o limite de 30 itens por kit e as condições utilizadas para determinar a disponibilidade e o custo do serviço de entrega.
+
+Os resultados foram registrados em checklist, contendo resultado esperado, resultado real e status de cada caso de teste. Os comportamentos divergentes dos requisitos foram documentados e reportados no Jira.
+
+---
 
 ## 📊 Resultados
 
-Foram executados **70 casos de teste**, distribuídos entre os dois endpoints analisados.
+Durante a execução dos **70 casos de teste**, foram identificados **40 comportamentos divergentes do esperado**.
 
-| Endpoint | Casos executados | Aprovados | Reprovados |
-|---|---:|---:|---:|
-| `POST /api/v1/kits/:id/products` | 26 | 6 | 20 |
-| `POST /order-and-go/v1/delivery` | 44 | 13 | 31 |
-| **Total** | **70** | **19** | **51** |
+Os problemas encontrados estavam principalmente relacionados a:
 
-Os testes aprovados confirmaram o funcionamento esperado de diferentes cenários, incluindo a adição e atualização de produtos em kits, o limite de 30 itens e diferentes condições para cálculo do serviço de entrega.
+- Validação de parâmetros de entrada;
+- Tratamento de valores nulos, vazios ou ausentes;
+- Validação de tipos de dados;
+- Aceitação de valores inválidos;
+- Aplicação de regras de negócio;
+- Cálculo do custo de entrega;
+- Validação da disponibilidade do serviço;
+- Retornos HTTP diferentes dos esperados.
 
-Os testes reprovados evidenciaram problemas principalmente relacionados ao tratamento de entradas inválidas, validação de parâmetros e aplicação de algumas regras de negócio.
+Os defeitos identificados foram registrados no Jira durante a execução dos testes.
 
-## 🐞 Bugs
+### Resumo da execução
 
-As falhas identificadas durante a execução foram documentadas e reportadas no **Jira**, permitindo o registro e acompanhamento dos problemas encontrados.
+| Resultado | Quantidade |
+| --- | ---: |
+| Casos aprovados | 30 |
+| Casos com falha | 40 |
+| Total | 70 |
 
-Entre os principais comportamentos observados estavam:
+---
 
-- Retorno de `200 OK` para dados que deveriam ser rejeitados com `400 Bad Request`;
-- Retorno de `500 Internal Server Error` em situações de dados inválidos;
-- Falhas na validação de parâmetros obrigatórios;
-- Aceitação de valores negativos ou inválidos;
-- Comportamentos divergentes nas regras de cálculo do serviço de entrega;
-- Divergências na aplicação de limites relacionados ao peso e à quantidade de produtos.
+## 🐞 Principais defeitos identificados
 
-## 🛠️ Tecnologias e ferramentas
+Os defeitos encontrados envolveram principalmente:
 
-- **Postman**
-- **Jira**
-- **API Testing**
-- **Testes manuais**
-- **Análise de requisitos**
-- **Checklist de testes**
-- **JSON**
+- Validação de entrada;
+- Valores-limite;
+- Formatos e tipos de dados;
+- Parâmetros obrigatórios;
+- Tratamento de dados inválidos;
+- Regras de negócio;
+- Cálculo de valores;
+- Disponibilidade do serviço de entrega;
+- Códigos de resposta HTTP.
+
+Os defeitos foram documentados e registrados no Jira durante a execução dos testes.
+
+---
+
+## 🛠️ Ferramentas
+
+`Postman` `Jira` `Google Sheets` `ApiDoc` `JSON`
+
+---
+
+## 🧠 Competências
+
+- Análise de requisitos;
+- Planejamento e design de testes;
+- Elaboração e execução de casos de teste;
+- Testes de API;
+- Testes funcionais;
+- Validação de requisições e respostas;
+- Validação de códigos HTTP;
+- Aplicação de classes de equivalência e valores-limite;
+- Validação de regras de negócio;
+- Identificação e documentação de defeitos;
+- Gerenciamento de bugs com Jira;
+- Análise de dados de entrada.
+
+---
+
+## 📚 Contexto
+
+Projeto prático desenvolvido como parte do Bootcamp de Analista de QA da TripleTen.
+
+A atividade teve como foco o teste do backend da aplicação Urban.Grocers, envolvendo análise de requisitos, design de casos de teste, execução de requisições por meio do Postman e registro dos resultados.
+
+Foram executados **70 casos de teste**, com **30 casos aprovados e 40 casos apresentando falhas**. Os comportamentos divergentes encontrados foram documentados e registrados no Jira.
+
+Esta documentação resume as atividades realizadas durante o projeto, sem reproduzir materiais proprietários, requisitos internos ou arquivos originais da plataforma.
